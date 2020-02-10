@@ -1,0 +1,318 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[paper=a4,fontsize=10pt]{scrartcl} % KOMA-article class
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{boxedminipage}
+\usepackage{parcolumns}
+\usepackage{multicol}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage[margin=0.2in]{geometry}
+	\textheight=800px                    % Saving trees ;-)
+\usepackage{xhfill}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{0pt}{0pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newlength{\spacerbox}
+\settowidth{\spacerbox}{88888888888888888888888888888888888888888888888888888888888888888888888888888888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{% Name
+		\hspace{-1em}\Huge \usefont{OT1}{phv}{b}{n}#1
+		\par \normalsize \normalfont }
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\hspace{-2em}\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{ \noindent \large \usefont{OT1}{phv}{b}{n}\uppercase{#1} \normalfont \normalsize}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent%\hangindent=2em\hangafter=0 % Indentation
+		%\parbox{\spacebox}{        % Box to align text
+		\textit{#1}	       % Entry name (birth, address, etc.)
+		\newline \color{White}ab\color{Black} #2 \newline}% \par%}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent % Indentation
+		      % Box to align text
+		\textit{#1}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1}     % Study
+			\hfill#2 \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\CustomEducationEntry}[4]{
+		\noindent \hangindent=2em\hangafter=0 \small #4 \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{8em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		%\noindent \textit{#3} \par        % School
+		%\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\ProjectEntry}[4]{
+		\noindent \textbf{#1} \hfill  \par    % Study
+		%\hfill \url{#2} \par  % Duration
+		\noindent \hangindent=2em \hangafter=0 \small #4 \hfill  \par
+        \noindent \hangindent=2em\hangafter=0 \small \url{#2} \dotfill #3% Box to align text
+		%\parbox{\spacebox}{\textit{#3}}			   % Entry name (birth, address, etc.)
+		%\hspace{1.5em} \parbox{\spacerbox}{#4}
+        \normalsize \par}    % Entry value
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+ \usepackage{vwcol}
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+%%% Personal details
+%%% ------------------------------------------------------------
+%\begin{parcolumns}[nofirstindent,sloppy,rulebetween,colwidths={1=.25\linewidth}]{2}
+%\colchunk[1]{
+\MyName{Aneesh Durg}
+\hspace{-2em}\color{White}a\color{Black}\leaders\hrule height 2.4pt\hskip 10pt plus 1fill\color{White}a\color{Black}
+\sepspace
+
+\hspace{-1em}
+\begin{minipage}[t]{0.2\textwidth}
+
+\NewPart{Contact}{}\newline
+% \PersonalEntry{Phone:}{REDACTED}
+\PersonalEntry{Mail:}{aneeshdurg17@gmail.com}
+\PersonalEntry{Website:}{\url{aneeshdurg.me}}
+\PersonalEntry{Github:}{\url{aneeshdurg}}
+
+\NewPart{Education}{}\newline
+\SkillsEntry{
+  \small
+    University of Illinois at Urbana-Champaign
+  \normalsize \newline}{Aug 2015-May 2019}{\sepspace Recieved BS in Computer Science \& Mathematics with \textbf{High Distinction}}{}%{\textbf{Current GPA:} 3.57/4.00\newline
+%\small\color{White}ab\color{Black}\textbf{Dean's list:} Fall 15, Fall 16\normalsize}
+
+%\NewPart{Education}{}\newline
+%\EducationEntry{University of Illinois at Urbana-Champaign}{\newline 2015-2019}{BS in Computer Science \& \newline Mathematics}{\textbf{Current GPA:}\newline \color{White}ab\color{Black} 3.70/4.00 \newline\textbf{Dean's list:}\newline \color{White}ab\color{Black} Fall 15, Fall 16}
+
+\sepspace
+\sepspace
+\NewPart{Programming Languages}{} \newline
+    \SkillsEntry{}{
+      \textsc{C},
+      \textsc{Python},
+      \textsc{JavaScript},
+      \textsc{Bash},
+      \textsc{Rust},
+      \textsc{Haskell},
+      \textsc{Sed},
+      \textsc{D},
+      \textsc{Go},
+      \textsc{C++}
+    }
+
+\sepspace
+\sepspace
+\NewPart{Libraries/ Frameworks}{} \newline
+\SkillsEntry{}{
+  \textbf{ML/AI:}
+  \small
+    \textsc{Caffe},
+    \textsc{OpenCV},
+    \textsc{TensorFlow}
+  \normalsize
+  \newline\newline
+  \textbf{Web:}
+  \small
+    \textsc{Django},
+    \textsc{Tornado},
+    \textsc{React},
+    \textsc{d3.js},
+    \textsc{JQuery}
+  \normalsize
+  \newline\newline
+  \textbf{Other:}
+  \small
+    \textsc{OpenMP},
+    \textsc{MKL},
+    \textsc{cuBLAS},
+    \textsc{Numpy},
+    \textsc{DAAL}
+  \normalsize
+}
+
+\end{minipage}
+\hspace{0.5em}
+\vline
+%}
+%\colchunk[2]{
+%\begin{multicols}{2}
+\hspace{1em}
+\begin{minipage}[t]{0.75\textwidth}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\EducationEntry{Member of Technical Staff}{Aug 2019-Present}{Qumulo Inc. | Seattle, WA}{
+\begin{itemize}
+  \item[$\bullet$] Implemented negotiation of SMB 3.1.1
+  \item[$\bullet$] Implemented SMB server-side copy
+  \item[$\bullet$] Implemented encryption capability to support SMB 3.x
+    \begin{itemize}
+      \item[$\bullet$] Used the \textbf{OpenSSL} library to perform AES encryption
+      \item[$\bullet$] Learnt about best practices surrounding encryption
+    \end{itemize}
+\end{itemize}
+}
+
+\EducationEntry{Course Lead}{Jan 2017-May 2019}{Systems Programming (CS 241) | Urbana, IL}{
+\begin{itemize}
+  \item[$\bullet$] Development lead for assignments, Lab/Office hours assistant, Honors mentor.
+  \item[$\bullet$] Proposed and led initiative to redesign assignments to be more realistic such as:
+    \begin{itemize}
+      \item[$\bullet$] Redesigned a filesystems assignment by creating a library that redirects filesystem calls, which students use to build a virtual filesystem.
+      \item[$\bullet$] Implemented a containers assignment where students build a docker-esque container framework using existing tools.
+      %\item[$\bullet$] Prototyping exploratory assignments for the honors section that aim to delve into more advanced topics.
+    \end{itemize}
+  \item[$\bullet$] Successfully mentored honors student teams to complete systems focused projects exploring areas such as distributed systems, compilers and writing kernel modules.
+\end{itemize}
+}
+\EducationEntry{Software Engineering Intern}{May 2018-Aug 2018}{Qumulo Inc. | Seattle, WA}{
+\begin{itemize}
+  \item[$\bullet$] Improved testing framework by using \textbf{linux namespaces} and sped up testing time by up to 5x.
+  \item[$\bullet$] Designed developed a feature to enable IP failover in \textbf{AWS}.
+  \item[$\bullet$] Learnt cloud networking best practices and extensively used the \textbf{AWS API}.
+\end{itemize}
+}
+
+% \EducationEntry{Machine Learning Intern}{May 2017-Aug 2017}{Intel Corporation | Austin, TX}{
+% \begin{itemize}
+%   \item Evaluated performance of \textbf{ Intel Movidius Neural Compute stick (NCS)}. Proved a linear increase in speed when using multiple \textbf{NCS} devices.
+%     %Developed a web interface to demonstrate performance.
+%   %\item Achieved 1.5x speedup on \textbf{CNNs}  (\textbf{GoogLeNet}, \textbf{AlexNet}, \textbf{Age-Gender Net}) by using \textbf{NCS}. Compared against CPU/GPU using \textbf{Caffe}.
+%    \item  Made a proof of concept demonstrating potential performance gains by parallelizing NCS convolution.
+%   % \item[$\bullet$] Also worked on improving the efficiency of \textbf{libSVM} on intel CPUs as a side project. Achieved 4x speed up by parallelizing via \textbf{OpenMP} and by using \textbf{MKL} BLAS libraries on "Up squared" development board (Apollo Lake SoC).
+% \end{itemize}
+% }
+
+% \EducationEntry{Software Developer}{May 2016-Dec 2016}{Hacklab Innovations | Bangalore, India}{
+% \begin{itemize}
+% \item Built AAMI - a reading assistant for the blind and visually impaired. Used technologies such as \textbf{OpenCV}, \textbf{Numpy}, \textbf{tesseract-ocr}, and \textbf{Caffe}.
+% \item Developed and optimized a real-time imaging algorithm to find text in images and synthesize audio.
+% \end{itemize}
+% }
+
+%\EducationEntry{Course Assistant}{Jan 2016-May 2017}{CS 196 @ UIUC [\url{https://courses.engr.illinois.edu/cs19625/}]}{
+%\begin{itemize}
+%\item Mentored the honors section of Intro to CS.
+%\item Helped students get familiar with various algorithmic concepts and various strategies regarding creating and %maintaining a scalable project.
+%\item Successfully guided 3 teams of students to complete projects in various areas.
+%\end{itemize}
+%}
+
+%\sepspace
+%\sepspace
+%\NewPart{Research experience}{}
+%
+%\EducationEntry{Networking Researcher}{Aug 2017-Dec 2017}{Independent research project with Prof. Matthew Caesar}{
+%\begin{itemize}
+%\item Exploring video streaming optimization using \textbf{peer-to-peer} techniques (e.g. optimizing YouTube).
+%\end{itemize}
+%}
+
+% \EducationEntry{Game Developer \& Research Assistant}{May 2016-May 2017}{Project 415x with Prof. Cary Malkiewich \& Prof. Jenya Sapir}{
+% \begin{itemize}
+% \item Developed an open source game to teach linear algebra concepts. \url{http://project415x.github.io/}
+% %\item Held experimental trials to evaluate effectiveness of the game. Play it at \url{http://p415x.xyz/}
+% \end{itemize}
+% }
+
+
+%%% Projects
+%%% ------------------------------------------------------------
+%\sepspace
+\sepspace
+\NewPart{Projects}{}
+
+\EducationEntry{What Is a Filesystem?}{Javascript}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
+\begin{itemize}
+\item An online interactive book with vizualizations that help students learn about filesystem concepts.
+\item Features an implementation of a ext2-esque filesystem with animation to illustrate how a disk would be accessed.
+\item Features a terminal simulator which has many standard \texttt{GNU/Linux} utilities built in.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
+\end{itemize}
+}
+
+\EducationEntry{Pianux}{C}{\url{https://github.com/aneeshdurg/pianux}}{
+\begin{itemize}
+\item Implemented a piano that plays music written to a linux file-like object.
+\item Invented a domain specific language to describe music, supporting syntax for loops and multiple output channels that can be dynamically added and removed.
+\end{itemize}
+}
+
+\EducationEntry{Algebraic C}{C}{\url{https://github.com/aneeshdurg/algebraic-c}}{
+\begin{itemize}
+\item Algebraic data types implemented in C.
+\item Leverages the \textbf{C preprocessor} to guarantee type safety.
+\item Built a custom preprocessor in \textbf{python} to aid code generation.
+\end{itemize}
+}
+
+%\EducationEntry{Browser Haskell}{Haskell}{\url{https://github.com/aneeshdurg/browserHaskell/}}{
+%\begin{itemize}
+%\item Online REPL written in \textbf{Haskell} that allows users to run Haskell code.
+%\item Replicated terminal experience by leveraging \textbf{websockets} to control standard input.
+%\item Used \textbf{Docker} containers to prevent execution of malicious code on the server.
+%\end{itemize}
+%}
+
+\EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
+\begin{itemize}
+  \item Built an in-browser webcam theremin that can play musical notes controlled by hand gestures.
+  \item Implemented all image processing functions required.
+\end{itemize}
+}
+%}
+
+\end{minipage}
+\end{document}
+
