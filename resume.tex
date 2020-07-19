@@ -7,7 +7,7 @@
 % Date: July 2011
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[paper=a4,fontsize=10pt]{scrartcl} % KOMA-article class
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -19,7 +19,7 @@
 \usepackage{amsmath,amsfonts,amsthm}     % Math packages
 \usepackage{graphicx}                    % Enable pdflatex
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
-\usepackage[margin=0.2in]{geometry}
+\usepackage[margin=0.25in]{geometry}
 	\textheight=800px                    % Saving trees ;-)
 \usepackage{xhfill}
 \usepackage{hyperref}
@@ -112,18 +112,23 @@
 %\begin{parcolumns}[nofirstindent,sloppy,rulebetween,colwidths={1=.25\linewidth}]{2}
 %\colchunk[1]{
 \MyName{Aneesh Durg}
+\sepspace
+Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Github: \url{github.com/aneeshdurg}
+\newline
+\vspace{-1em}
+
 \hspace{-2em}\color{White}a\color{Black}\leaders\hrule height 2.4pt\hskip 10pt plus 1fill\color{White}a\color{Black}
+
+% \hspace{-1em}
+\begin{minipage}[t]{0.2\textwidth}
 \sepspace
 
-\hspace{-1em}
-\begin{minipage}[t]{0.2\textwidth}
-
-\NewPart{Contact}{}\newline
-% \PersonalEntry{Phone:}{REDACTED}
-\PersonalEntry{Mail:}{aneeshdurg17@gmail.com}
-\PersonalEntry{Website:}{\url{aneeshdurg.me}}
-\PersonalEntry{Github:}{\url{aneeshdurg}}
-
+% \NewPart{Contact}{}\newline
+% % \PersonalEntry{Phone:}{REDACTED}
+% \PersonalEntry{Mail:}{aneeshdurg17@gmail.com}
+% \PersonalEntry{Website:}{\url{aneeshdurg.me}}
+% \PersonalEntry{Github:}{\url{aneeshdurg}}
+%
 \NewPart{Education}{}\newline
 \SkillsEntry{
   \small
@@ -148,6 +153,7 @@
       \textsc{Go},
       \textsc{D},
       \textsc{Haskell},
+      \textsc{GLSL}
     }
 
 \sepspace
@@ -170,7 +176,8 @@
   \small
     \textsc{Flask},
     \textsc{Tornado},
-    \textsc{Django}
+    \textsc{Django},
+    \textsc{Node.js}
   \normalsize
   \newline\newline
 
@@ -204,7 +211,7 @@
 %\begin{multicols}{2}
 \hspace{1em}
 \begin{minipage}[t]{0.75\textwidth}
-
+\sepspace
 %%% Work experience
 %%% ------------------------------------------------------------
 \NewPart{Work experience}{}
@@ -224,13 +231,10 @@
     \end{itemize}
   \item[$\bullet$] Helped implement the following \textbf{SMB} features
     \begin{itemize}
-      \item[$\bullet$] SMB 3.1.1 negotiation
-      \item[$\bullet$] Server-side copy
-      \item[$\bullet$] Encryption
+      \item[$\bullet$] SMB 3.1.1 negotiation, Server-side copy, Encryption
     \end{itemize}
 \end{itemize}
 }
-\sepspace
 
 \EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
 \begin{itemize}
@@ -243,7 +247,6 @@
   \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
 \end{itemize}
 }
-\sepspace
 
 \EducationEntry{Software Engineering Intern}{May 2018-Aug 2018}{Qumulo Inc. | Seattle, WA}{
 \begin{itemize}
@@ -252,7 +255,6 @@
   % \item[$\bullet$] Learnt cloud networking best practices and extensively used the \textbf{AWS API}.
 \end{itemize}
 }
-\sepspace
 
 % \EducationEntry{Machine Learning Intern}{May 2017-Aug 2017}{Intel Corporation | Austin, TX}{
 % \begin{itemize}
@@ -301,7 +303,6 @@
 %%% ------------------------------------------------------------
 %\sepspace
 \sepspace
-\sepspace
 \NewPart{Projects}{}
 
 \EducationEntry{Ephemeral}{Typescript/React}{\url{http://aneeshdurg.me/ephemeral}}{
@@ -312,7 +313,6 @@
 \item Uses \textbf{peerjs} for peer-to-peer communication
 \end{itemize}
 }
-\sepspace
 
 \EducationEntry{What Is a Filesystem?}{Javascript}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
 \begin{itemize}
@@ -321,7 +321,6 @@
 \item Features a terminal simulator which implements some standard \texttt{GNU/Linux} utilities.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
 \end{itemize}
 }
-\sepspace
 
 % \EducationEntry{Pianux}{C}{\url{https://github.com/aneeshdurg/pianux}}{
 % \begin{itemize}
@@ -336,16 +335,15 @@
 \item Implemented all image processing functions required in Javascript/\textbf{WebGL}.
 \end{itemize}
 }
-\sepspace
 
-\EducationEntry{Algebraic C}{C}{\url{https://github.com/aneeshdurg/algebraic-c}}{
-\begin{itemize}
-\item Algebraic data types implemented in C.
-\item Leverages the \textbf{C preprocessor} to guarantee type safety.
-\item Built a custom preprocessor in \textbf{python} to aid code generation.
-\end{itemize}
-}
-\sepspace
+% \EducationEntry{Algebraic C}{C}{\url{https://github.com/aneeshdurg/algebraic-c}}{
+% \begin{itemize}
+% \item Algebraic data types implemented in C.
+% \item Leverages the \textbf{C preprocessor} to guarantee type safety.
+% \item Built a custom preprocessor in \textbf{python} to aid code generation.
+% \end{itemize}
+% }
+% \sepspace
 
 %\EducationEntry{Browser Haskell}{Haskell}{\url{https://github.com/aneeshdurg/browserHaskell/}}{
 %\begin{itemize}
