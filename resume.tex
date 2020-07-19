@@ -140,14 +140,14 @@
     \SkillsEntry{}{
       \textsc{C},
       \textsc{Python},
+      \textsc{TypeScript},
       \textsc{JavaScript},
-      \textsc{Bash},
       \textsc{Rust},
-      \textsc{Haskell},
-      \textsc{Sed},
-      \textsc{D},
-      \textsc{Go},
+      \textsc{Bash},
       \textsc{C++}
+      \textsc{Go},
+      \textsc{D},
+      \textsc{Haskell},
     }
 
 \sepspace
@@ -155,28 +155,44 @@
 \NewPart{Libraries/ Frameworks}{} \newline
 \SkillsEntry{}{
   \textbf{ML/AI:}
+  \newline
   \small
     \textsc{Caffe},
     \textsc{OpenCV},
+    \newline
+    \textsc{PyTorch},
     \textsc{TensorFlow}
   \normalsize
   \newline\newline
-  \textbf{Web:}
+
+  \textbf{Web Backend:}
+  \newline
   \small
-    \textsc{Django},
+    \textsc{Flask},
     \textsc{Tornado},
+    \textsc{Django}
+  \normalsize
+  \newline\newline
+
+  \textbf{Web Frontend:}
+  \newline
+  \small
     \textsc{React},
+    \textsc{peerjs},
+    \textsc{WebGL},
     \textsc{d3.js},
     \textsc{JQuery}
   \normalsize
   \newline\newline
-  \textbf{Other:}
+
+  \textbf{Containers/OS:}
+  \newline
   \small
-    \textsc{OpenMP},
-    \textsc{MKL},
-    \textsc{cuBLAS},
-    \textsc{Numpy},
-    \textsc{DAAL}
+    \textsc{systemd},
+    \textsc{systemd-nspawn},
+    \textsc{D-Bus},
+    \textsc{Docker},
+    \textsc{lxc}
   \normalsize
 }
 
@@ -195,35 +211,48 @@
 
 \EducationEntry{Member of Technical Staff}{Aug 2019-Present}{Qumulo Inc. | Seattle, WA}{
 \begin{itemize}
-  \item[$\bullet$] Implemented negotiation of SMB 3.1.1
-  \item[$\bullet$] Implemented SMB server-side copy
-  \item[$\bullet$] Implemented encryption capability to support SMB 3.x
+  \item[$\bullet$] Collaboratively designed a solution for reducing server downtime during upgrades
     \begin{itemize}
-      \item[$\bullet$] Used the \textbf{OpenSSL} library to perform AES encryption
-      \item[$\bullet$] Learnt about best practices surrounding encryption
+        \item[$\bullet$] Used \textbf{systemd-nspawn} for containerization
+        \item[$\bullet$] Leveraged \textbf{systemd} for managing services
+        \item[$\bullet$] Used \textbf{dbus} to allow processes to break out of a container
+    \end{itemize}
+  \item[$\bullet$] Modernized python code by adding types via \textbf{mypy}
+  \item[$\bullet$] Re-desgined and refactored the \textbf{SMB} implementation for better memory safety
+    \begin{itemize}
+      \item[$\bullet$] Implemented smart pointer-esque objects in C
+    \end{itemize}
+  \item[$\bullet$] Helped implement the following \textbf{SMB} features
+    \begin{itemize}
+      \item[$\bullet$] SMB 3.1.1 negotiation
+      \item[$\bullet$] Server-side copy
+      \item[$\bullet$] Encryption
     \end{itemize}
 \end{itemize}
 }
+\sepspace
 
-\EducationEntry{Course Lead}{Jan 2017-May 2019}{Systems Programming (CS 241) | Urbana, IL}{
+\EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
 \begin{itemize}
   \item[$\bullet$] Development lead for assignments, Lab/Office hours assistant, Honors mentor.
-  \item[$\bullet$] Proposed and led initiative to redesign assignments to be more realistic such as:
+  \item[$\bullet$] Redesigned assignments to be more engaging
     \begin{itemize}
-      \item[$\bullet$] Redesigned a filesystems assignment by creating a library that redirects filesystem calls, which students use to build a virtual filesystem.
-      \item[$\bullet$] Implemented a containers assignment where students build a docker-esque container framework using existing tools.
-      %\item[$\bullet$] Prototyping exploratory assignments for the honors section that aim to delve into more advanced topics.
+        \item[$\bullet$] Created a FUSE-esque library that redirects linux filesystem calls, but doesn't leave stale mounts on crashes, allowing students to attempt building a file-backed fs (and easily debug it).
+      \item[$\bullet$] Introduced a "implement a container" assignment.
     \end{itemize}
-  \item[$\bullet$] Successfully mentored honors student teams to complete systems focused projects exploring areas such as distributed systems, compilers and writing kernel modules.
+  \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
 \end{itemize}
 }
+\sepspace
+
 \EducationEntry{Software Engineering Intern}{May 2018-Aug 2018}{Qumulo Inc. | Seattle, WA}{
 \begin{itemize}
-  \item[$\bullet$] Improved testing framework by using \textbf{linux namespaces} and sped up testing time by up to 5x.
-  \item[$\bullet$] Designed developed a feature to enable IP failover in \textbf{AWS}.
-  \item[$\bullet$] Learnt cloud networking best practices and extensively used the \textbf{AWS API}.
+  \item[$\bullet$] Used \textbf{linux namespaces} to speed up testing time by up to 5x.
+  \item[$\bullet$] Designed and developed a IP failover in \textbf{AWS}.
+  % \item[$\bullet$] Learnt cloud networking best practices and extensively used the \textbf{AWS API}.
 \end{itemize}
 }
+\sepspace
 
 % \EducationEntry{Machine Learning Intern}{May 2017-Aug 2017}{Intel Corporation | Austin, TX}{
 % \begin{itemize}
@@ -272,22 +301,42 @@
 %%% ------------------------------------------------------------
 %\sepspace
 \sepspace
+\sepspace
 \NewPart{Projects}{}
+
+\EducationEntry{Ephemeral}{Typescript/React}{\url{http://aneeshdurg.me/ephemeral}}{
+\begin{itemize}
+\item A distributed, peer-to-peer social media platform - without any backing storage
+\item Uses \textbf{RSA} encryption and signing to prove identity
+\item Requires an external server for an initial handshake and is entirely client driven afterwards
+\item Uses \textbf{peerjs} for peer-to-peer communication
+\end{itemize}
+}
+\sepspace
 
 \EducationEntry{What Is a Filesystem?}{Javascript}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
 \begin{itemize}
-\item An online interactive book with vizualizations that help students learn about filesystem concepts.
-\item Features an implementation of a ext2-esque filesystem with animation to illustrate how a disk would be accessed.
-\item Features a terminal simulator which has many standard \texttt{GNU/Linux} utilities built in.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
+\item An online interactive book/vizualization for students learning filesystem concepts.
+\item Implements a ext2-esque filesystem with animations to illustrate how a disk accesses occur.
+\item Features a terminal simulator which implements some standard \texttt{GNU/Linux} utilities.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
 \end{itemize}
 }
+\sepspace
 
-\EducationEntry{Pianux}{C}{\url{https://github.com/aneeshdurg/pianux}}{
+% \EducationEntry{Pianux}{C}{\url{https://github.com/aneeshdurg/pianux}}{
+% \begin{itemize}
+% \item A piano that plays music written to a linux file-like object.
+% \item Invented a domain specific language to describe music, supporting syntax for loops and multiple output channels that can be dynamically added and removed.
+% \end{itemize}
+% }
+
+\EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
 \begin{itemize}
-\item Implemented a piano that plays music written to a linux file-like object.
-\item Invented a domain specific language to describe music, supporting syntax for loops and multiple output channels that can be dynamically added and removed.
+\item In-browser webcam gesture-based theremin (a musical instrument)
+\item Implemented all image processing functions required in Javascript/\textbf{WebGL}.
 \end{itemize}
 }
+\sepspace
 
 \EducationEntry{Algebraic C}{C}{\url{https://github.com/aneeshdurg/algebraic-c}}{
 \begin{itemize}
@@ -296,6 +345,7 @@
 \item Built a custom preprocessor in \textbf{python} to aid code generation.
 \end{itemize}
 }
+\sepspace
 
 %\EducationEntry{Browser Haskell}{Haskell}{\url{https://github.com/aneeshdurg/browserHaskell/}}{
 %\begin{itemize}
@@ -303,14 +353,6 @@
 %\item Replicated terminal experience by leveraging \textbf{websockets} to control standard input.
 %\item Used \textbf{Docker} containers to prevent execution of malicious code on the server.
 %\end{itemize}
-%}
-
-\EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
-\begin{itemize}
-  \item Built an in-browser webcam theremin that can play musical notes controlled by hand gestures.
-  \item Implemented all image processing functions required.
-\end{itemize}
-}
 %}
 
 \end{minipage}
