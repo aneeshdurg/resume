@@ -54,12 +54,6 @@
 
 \newcommand{\NewPart}[1]{ \noindent \large \usefont{OT1}{phv}{b}{n}\uppercase{#1} \normalfont \normalsize}
 
-\newcommand{\PersonalEntry}[2]{
-		\noindent%\hangindent=2em\hangafter=0 % Indentation
-		%\parbox{\spacebox}{        % Box to align text
-		\textit{#1}	       % Entry name (birth, address, etc.)
-		\newline \color{White}ab\color{Black} #2 \newline}% \par%}    % Entry value
-
 \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
 		\noindent % Indentation
 		      % Box to align text
@@ -73,30 +67,6 @@
 		\noindent\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
-\newcommand{\CustomEducationEntry}[4]{
-		\noindent \hangindent=2em\hangafter=0 \small #4 \hfill      % Study
-		\colorbox{Black}{%
-			\parbox{8em}{%
-			\hfill\color{White}#2}} \par  % Duration
-		%\noindent \textit{#3} \par        % School
-		%\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
-
-\newcommand{\ProjectEntry}[4]{
-		\noindent \textbf{#1} \hfill  \par    % Study
-		%\hfill \url{#2} \par  % Duration
-		\noindent \hangindent=2em \hangafter=0 \small #4 \hfill  \par
-        \noindent \hangindent=2em\hangafter=0 \small \url{#2} \dotfill #3% Box to align text
-		%\parbox{\spacebox}{\textit{#3}}			   % Entry name (birth, address, etc.)
-		%\hspace{1.5em} \parbox{\spacerbox}{#4}
-        \normalsize \par}    % Entry value
-
-\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-		\colorbox{Black}{\color{White}#2} \par  % Duration
-		\noindent \textit{#3} \par              % Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
  \usepackage{vwcol}
 %%% Begin Document
 %%% ------------------------------------------------------------
@@ -120,34 +90,98 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
 \hspace{-2em}\color{White}a\color{Black}\leaders\hrule height 2.4pt\hskip 10pt plus 1fill\color{White}a\color{Black}
 
 % \hspace{-1em}
+\begin{minipage}[t]{0.7\textwidth}
+\sepspace
+
+\NewPart{Work experience}{}
+
+\EducationEntry{Member of Technical Staff}{Aug 2019-Present}{Qumulo Inc. | Seattle, WA}{
+\begin{itemize}
+    % reword
+  \item[$\bullet$] Designed a solution for eliminating server downtime during upgrades in a team of four
+    \begin{itemize}
+        \item[$\bullet$] Used containerization to avoid potentially slow boot times
+        \item[$\bullet$] Used \textbf{dbus} to allow processes to break out of a container
+    \end{itemize}
+  \item[$\bullet$] Helped implement the following \textbf{SMB} features
+    \begin{itemize}
+      \item[$\bullet$] SMB 3.1.1 negotiation, Server-side copy, Encryption
+    \end{itemize}
+    % highlight the problem solved
+  \item[$\bullet$] Refactored the \textbf{SMB} implementation to increase efficiency SMB 3.1 requests.
+    \begin{itemize}
+      \item[$\bullet$] Implemented smart pointer-esque objects in C for reduced memory usage and improved safety
+    \end{itemize}
+  \item[$\bullet$] Modernized python code by adding types via \textbf{mypy}
+  \end{itemize}
+}
+
+\EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
+\begin{itemize}
+  \item[$\bullet$] Development lead for assignments, Lab/Office hours assistant, Honors mentor.
+  \item[$\bullet$] Redesigned assignments to be more engaging
+    \begin{itemize}
+        \item[$\bullet$] Created a FUSE-esque library that redirects linux filesystem calls, but doesn't leave stale mounts on crashes, allowing students to attempt building a file-backed fs (and easily debug it).
+      \item[$\bullet$] Introduced a "implement a container" assignment.
+    \end{itemize}
+  \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
+\end{itemize}
+}
+
+\EducationEntry{Software Engineering Intern}{May 2018-Aug 2018}{Qumulo Inc. | Seattle, WA}{
+\begin{itemize}
+  \item[$\bullet$] Used \textbf{linux namespaces} to speed up testing time by up to 5x.
+  \item[$\bullet$] Designed and developed a IP failover in \textbf{AWS}.
+\end{itemize}
+}
+
+\sepspace
+\NewPart{Projects}{}
+
+\EducationEntry{Ephemeral}{Typescript/React}{\url{http://aneeshdurg.me/ephemeral}}{
+\begin{itemize}
+\item A distributed, peer-to-peer, twitter-inspired social media platform
+\item Uses \textbf{RSA} encryption and signing to prove identity
+\end{itemize}
+}
+
+\EducationEntry{What Is a Filesystem?}{Javascript}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
+\begin{itemize}
+\item An online interactive book/vizualization for students learning filesystem concepts.
+\item Implements a ext2-esque filesystem with animations to illustrate how a disk accesses occur.
+\item Features a terminal simulator which implements some standard \texttt{GNU/Linux} utilities.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
+\end{itemize}
+}
+\EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
+\begin{itemize}
+\item In-browser webcam gesture-based theremin (a musical instrument)
+\item Implemented all image processing functions required in Javascript/\textbf{WebGL}.
+\end{itemize}
+}
+\end{minipage}
+\hspace{0.5em}
+\vline
+%}
+%\colchunk[2]{
+%\begin{multicols}{2}
+\hspace{1em}
 \begin{minipage}[t]{0.2\textwidth}
 \sepspace
 
-% \NewPart{Contact}{}\newline
-% % \PersonalEntry{Phone:}{REDACTED}
-% \PersonalEntry{Mail:}{aneeshdurg17@gmail.com}
-% \PersonalEntry{Website:}{\url{aneeshdurg.me}}
-% \PersonalEntry{Github:}{\url{aneeshdurg}}
-%
 \NewPart{Education}{}\newline
 \SkillsEntry{
   \small
-    University of Illinois at Urbana-Champaign
+    University of Illinois at\newline Urbana-Champaign
   \normalsize \newline}{Aug 2015-May 2019}{\sepspace Recieved BS in Computer Science \& Mathematics with \textbf{High Distinction}}{}%{\textbf{Current GPA:} 3.57/4.00\newline
-%\small\color{White}ab\color{Black}\textbf{Dean's list:} Fall 15, Fall 16\normalsize}
-
-%\NewPart{Education}{}\newline
-%\EducationEntry{University of Illinois at Urbana-Champaign}{\newline 2015-2019}{BS in Computer Science \& \newline Mathematics}{\textbf{Current GPA:}\newline \color{White}ab\color{Black} 3.70/4.00 \newline\textbf{Dean's list:}\newline \color{White}ab\color{Black} Fall 15, Fall 16}
-
 \sepspace
 \sepspace
 \NewPart{Programming Languages}{} \newline
     \SkillsEntry{}{
       \textsc{C},
-      \textsc{Python},
+      \textsc{Python},\newline
       \textsc{TypeScript},
       \textsc{JavaScript},
-      \textsc{Rust},
+      \textsc{Rust},\newline
       \textsc{Bash},
       \textsc{C++}
       \textsc{Go},
@@ -175,7 +209,7 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
   \newline
   \small
     \textsc{Flask},
-    \textsc{Tornado},
+    \textsc{Tornado},\newline
     \textsc{Django},
     \textsc{Node.js}
   \normalsize
@@ -195,163 +229,14 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
   \textbf{Containers/OS:}
   \newline
   \small
-    \textsc{systemd},
-    \textsc{systemd-nspawn},
     \textsc{D-Bus},
     \textsc{Docker},
-    \textsc{lxc}
+    \textsc{lxc},
+    \textsc{systemd},
+    \textsc{systemd-nspawn}
   \normalsize
 }
 
-\end{minipage}
-\hspace{0.5em}
-\vline
-%}
-%\colchunk[2]{
-%\begin{multicols}{2}
-\hspace{1em}
-\begin{minipage}[t]{0.75\textwidth}
-\sepspace
-%%% Work experience
-%%% ------------------------------------------------------------
-\NewPart{Work experience}{}
-
-\EducationEntry{Member of Technical Staff}{Aug 2019-Present}{Qumulo Inc. | Seattle, WA}{
-\begin{itemize}
-  \item[$\bullet$] Collaboratively designed a solution for reducing server downtime during upgrades
-    \begin{itemize}
-        \item[$\bullet$] Used \textbf{systemd-nspawn} for containerization
-        \item[$\bullet$] Leveraged \textbf{systemd} for managing services
-        \item[$\bullet$] Used \textbf{dbus} to allow processes to break out of a container
-    \end{itemize}
-  \item[$\bullet$] Modernized python code by adding types via \textbf{mypy}
-  \item[$\bullet$] Re-desgined and refactored the \textbf{SMB} implementation for better memory safety
-    \begin{itemize}
-      \item[$\bullet$] Implemented smart pointer-esque objects in C
-    \end{itemize}
-  \item[$\bullet$] Helped implement the following \textbf{SMB} features
-    \begin{itemize}
-      \item[$\bullet$] SMB 3.1.1 negotiation, Server-side copy, Encryption
-    \end{itemize}
-\end{itemize}
-}
-
-\EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
-\begin{itemize}
-  \item[$\bullet$] Development lead for assignments, Lab/Office hours assistant, Honors mentor.
-  \item[$\bullet$] Redesigned assignments to be more engaging
-    \begin{itemize}
-        \item[$\bullet$] Created a FUSE-esque library that redirects linux filesystem calls, but doesn't leave stale mounts on crashes, allowing students to attempt building a file-backed fs (and easily debug it).
-      \item[$\bullet$] Introduced a "implement a container" assignment.
-    \end{itemize}
-  \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
-\end{itemize}
-}
-
-\EducationEntry{Software Engineering Intern}{May 2018-Aug 2018}{Qumulo Inc. | Seattle, WA}{
-\begin{itemize}
-  \item[$\bullet$] Used \textbf{linux namespaces} to speed up testing time by up to 5x.
-  \item[$\bullet$] Designed and developed a IP failover in \textbf{AWS}.
-  % \item[$\bullet$] Learnt cloud networking best practices and extensively used the \textbf{AWS API}.
-\end{itemize}
-}
-
-% \EducationEntry{Machine Learning Intern}{May 2017-Aug 2017}{Intel Corporation | Austin, TX}{
-% \begin{itemize}
-%   \item Evaluated performance of \textbf{ Intel Movidius Neural Compute stick (NCS)}. Proved a linear increase in speed when using multiple \textbf{NCS} devices.
-%     %Developed a web interface to demonstrate performance.
-%   %\item Achieved 1.5x speedup on \textbf{CNNs}  (\textbf{GoogLeNet}, \textbf{AlexNet}, \textbf{Age-Gender Net}) by using \textbf{NCS}. Compared against CPU/GPU using \textbf{Caffe}.
-%    \item  Made a proof of concept demonstrating potential performance gains by parallelizing NCS convolution.
-%   % \item[$\bullet$] Also worked on improving the efficiency of \textbf{libSVM} on intel CPUs as a side project. Achieved 4x speed up by parallelizing via \textbf{OpenMP} and by using \textbf{MKL} BLAS libraries on "Up squared" development board (Apollo Lake SoC).
-% \end{itemize}
-% }
-
-% \EducationEntry{Software Developer}{May 2016-Dec 2016}{Hacklab Innovations | Bangalore, India}{
-% \begin{itemize}
-% \item Built AAMI - a reading assistant for the blind and visually impaired. Used technologies such as \textbf{OpenCV}, \textbf{Numpy}, \textbf{tesseract-ocr}, and \textbf{Caffe}.
-% \item Developed and optimized a real-time imaging algorithm to find text in images and synthesize audio.
-% \end{itemize}
-% }
-
-%\EducationEntry{Course Assistant}{Jan 2016-May 2017}{CS 196 @ UIUC [\url{https://courses.engr.illinois.edu/cs19625/}]}{
-%\begin{itemize}
-%\item Mentored the honors section of Intro to CS.
-%\item Helped students get familiar with various algorithmic concepts and various strategies regarding creating and %maintaining a scalable project.
-%\item Successfully guided 3 teams of students to complete projects in various areas.
-%\end{itemize}
-%}
-
-%\sepspace
-%\sepspace
-%\NewPart{Research experience}{}
-%
-%\EducationEntry{Networking Researcher}{Aug 2017-Dec 2017}{Independent research project with Prof. Matthew Caesar}{
-%\begin{itemize}
-%\item Exploring video streaming optimization using \textbf{peer-to-peer} techniques (e.g. optimizing YouTube).
-%\end{itemize}
-%}
-
-% \EducationEntry{Game Developer \& Research Assistant}{May 2016-May 2017}{Project 415x with Prof. Cary Malkiewich \& Prof. Jenya Sapir}{
-% \begin{itemize}
-% \item Developed an open source game to teach linear algebra concepts. \url{http://project415x.github.io/}
-% %\item Held experimental trials to evaluate effectiveness of the game. Play it at \url{http://p415x.xyz/}
-% \end{itemize}
-% }
-
-
-%%% Projects
-%%% ------------------------------------------------------------
-%\sepspace
-\sepspace
-\NewPart{Projects}{}
-
-\EducationEntry{Ephemeral}{Typescript/React}{\url{http://aneeshdurg.me/ephemeral}}{
-\begin{itemize}
-\item A distributed, peer-to-peer social media platform - without any backing storage
-\item Uses \textbf{RSA} encryption and signing to prove identity
-\item Requires an external server for an initial handshake and is entirely client driven afterwards
-\item Uses \textbf{peerjs} for peer-to-peer communication
-\end{itemize}
-}
-
-\EducationEntry{What Is a Filesystem?}{Javascript}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
-\begin{itemize}
-\item An online interactive book/vizualization for students learning filesystem concepts.
-\item Implements a ext2-esque filesystem with animations to illustrate how a disk accesses occur.
-\item Features a terminal simulator which implements some standard \texttt{GNU/Linux} utilities.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
-\end{itemize}
-}
-
-% \EducationEntry{Pianux}{C}{\url{https://github.com/aneeshdurg/pianux}}{
-% \begin{itemize}
-% \item A piano that plays music written to a linux file-like object.
-% \item Invented a domain specific language to describe music, supporting syntax for loops and multiple output channels that can be dynamically added and removed.
-% \end{itemize}
-% }
-
-\EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
-\begin{itemize}
-\item In-browser webcam gesture-based theremin (a musical instrument)
-\item Implemented all image processing functions required in Javascript/\textbf{WebGL}.
-\end{itemize}
-}
-
-% \EducationEntry{Algebraic C}{C}{\url{https://github.com/aneeshdurg/algebraic-c}}{
-% \begin{itemize}
-% \item Algebraic data types implemented in C.
-% \item Leverages the \textbf{C preprocessor} to guarantee type safety.
-% \item Built a custom preprocessor in \textbf{python} to aid code generation.
-% \end{itemize}
-% }
-% \sepspace
-
-%\EducationEntry{Browser Haskell}{Haskell}{\url{https://github.com/aneeshdurg/browserHaskell/}}{
-%\begin{itemize}
-%\item Online REPL written in \textbf{Haskell} that allows users to run Haskell code.
-%\item Replicated terminal experience by leveraging \textbf{websockets} to control standard input.
-%\item Used \textbf{Docker} containers to prevent execution of malicious code on the server.
-%\end{itemize}
-%}
 
 \end{minipage}
 \end{document}
