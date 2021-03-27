@@ -95,10 +95,16 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
 
 \NewPart{Work experience}{}
 
-\EducationEntry{Member of Technical Staff}{Aug 2019-Present}{Qumulo Inc. | Seattle, WA}{
+\EducationEntry{Software Engineer}{Feb 2021-Present}{KatanaGraph Inc. | Austin, TX}{
 \begin{itemize}
-    % reword
-  \item[$\bullet$] Designed a solution for eliminating server downtime during upgrades in a team of four
+  \item[$\bullet$] Implementing and optimizing graph querying features and support for the \textbf{cypher} query language.
+\end{itemize}
+}
+
+\EducationEntry{Member of Technical Staff}{Aug 2019-Feb 2021}{Qumulo Inc. | Seattle, WA}{
+\begin{itemize}
+  \item[$\bullet$] Extended platform support for two new hardware configurations
+  \item[$\bullet$] Designed a solution for eliminating server downtime during upgrades from 5 minutes to under 30 seconds in a team of four
     \begin{itemize}
         \item[$\bullet$] Used containerization to avoid potentially slow boot times
         \item[$\bullet$] Used \textbf{dbus} to allow processes to break out of a container
@@ -108,30 +114,20 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
       \item[$\bullet$] SMB 3.1.1 negotiation, Server-side copy, Encryption
     \end{itemize}
     % highlight the problem solved
-  \item[$\bullet$] Refactored the \textbf{SMB} implementation to increase efficiency SMB 3.1 requests.
+  \item[$\bullet$] Refactored the \textbf{SMB} implementation to reduce memory usage.
+  \item[$\bullet$] Helped lead migration of \textbf{python2} code to \textbf{python3}
     \begin{itemize}
-      \item[$\bullet$] Implemented smart pointer-esque objects in C for reduced memory usage and improved safety
+      \item[$\bullet$] Modernized python code by adding types via \textbf{mypy}
+      \item[$\bullet$] Proposed and implemented a python dependency verification tool for customer and cloud deployments
     \end{itemize}
-  \item[$\bullet$] Modernized python code by adding types via \textbf{mypy}
-  \end{itemize}
+\end{itemize}
 }
 
 \EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
 \begin{itemize}
   \item[$\bullet$] Development lead for assignments, Lab/Office hours assistant, Honors mentor.
-  \item[$\bullet$] Redesigned assignments to be more engaging
-    \begin{itemize}
-        \item[$\bullet$] Created a FUSE-esque library that redirects linux filesystem calls, but doesn't leave stale mounts on crashes, allowing students to attempt building a file-backed fs (and easily debug it).
-      \item[$\bullet$] Introduced a "implement a container" assignment.
-    \end{itemize}
+  \item[$\bullet$] Designed and created assignments (and associated infrastructure) to allow students to implement and explore concepts such as filesystems, containers, and cooperative scheduling.
   \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
-\end{itemize}
-}
-
-\EducationEntry{Software Engineering Intern}{May 2018-Aug 2018}{Qumulo Inc. | Seattle, WA}{
-\begin{itemize}
-  \item[$\bullet$] Used \textbf{linux namespaces} to speed up testing time by up to 5x.
-  \item[$\bullet$] Designed and developed a IP failover in \textbf{AWS}.
 \end{itemize}
 }
 
@@ -172,21 +168,22 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
 \SkillsEntry{
   \small
     University of Illinois at\newline Urbana-Champaign
-  \normalsize \newline}{Aug 2015-May 2019}{\sepspace Recieved BS in Computer Science \& Mathematics with \textbf{High Distinction}}{}%{\textbf{Current GPA:} 3.57/4.00\newline
-\sepspace
+  \normalsize \newline}{Aug 2015-May 2019}{
+    \sepspace Recieved BS in \newline Computer Science \& \newline Mathematics with \newline \textbf{High Distinction}\newline}{}%{\textbf{Current GPA:} 3.57/4.00\newline
+
 \sepspace
 \NewPart{Programming Languages}{} \newline
     \SkillsEntry{}{
       \textsc{C},
-      \textsc{Python},\newline
-      \textsc{TypeScript},
+      \textsc{C++},
+      \textsc{Python},
+      \textsc{Rust},
+      \textsc{TypeScript},\newline
       \textsc{JavaScript},
-      \textsc{Rust},\newline
-      \textsc{Bash},
-      \textsc{C++}
+      \textsc{Bash},\newline
       \textsc{Go},
       \textsc{D},
-      \textsc{Haskell},
+      \textsc{Haskell},\newline
       \textsc{GLSL}
     }
 
@@ -230,9 +227,11 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
   \newline
   \small
     \textsc{D-Bus},
+    \textsc{cgroups},
+    \textsc{sysfs},
+    \textsc{systemd},
     \textsc{Docker},
     \textsc{lxc},
-    \textsc{systemd},
     \textsc{systemd-nspawn}
   \normalsize
 }
