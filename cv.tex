@@ -24,6 +24,7 @@
 \usepackage{xhfill}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{vwcol}
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
@@ -54,36 +55,19 @@
 
 \newcommand{\NewPart}[1]{ \noindent \large \usefont{OT1}{phv}{b}{n}\uppercase{#1} \normalfont \normalsize}
 
-\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-		\noindent % Indentation
-		      % Box to align text
-		\textit{#1}		       % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
-
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1}     % Study
 			\hfill#2 \par  % Duration
 		\noindent \textit{#3} \par        % School
 		\noindent\hangafter=0 \small #4 % Description
 		\normalsize \par}
-
- \usepackage{vwcol}
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
-% you can upload a photo and include it here...
-%\begin{wrapfigure}{l}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{photo}
-%\end{wrapfigure}
 
-%%% Personal details
-%%% ------------------------------------------------------------
-%\begin{parcolumns}[nofirstindent,sloppy,rulebetween,colwidths={1=.25\linewidth}]{2}
-%\colchunk[1]{
 \MyName{Aneesh Durg}
 \sepspace
-Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Github: \url{github.com/aneeshdurg}
+Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\vert$ Github: \url{https://github.com/aneeshdurg}
 \newline
 \vspace{-1em}
 
@@ -100,8 +84,6 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
 
 }
 
-
-% \hspace{-1em}
 \NewPart{Work experience}{}
 
 \EducationEntry{Software Engineer}{Feb 2021-Present}{KatanaGraph Inc. | Austin, TX}{
@@ -197,6 +179,13 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
 \end{itemize}
 }
 
+\EducationEntry{Research Game Developer}{May 2016-May 2017}{Project 415x @ UIUC with Prof. Cary Malkiewich \& Prof. Jenya Sapir}{
+\begin{itemize}
+\item \url{https://github.com/project415x/project415x.github.io}
+\item Developed an open source game to kinesthetically teach linear algebra concepts.
+\item Held experimental trials to evaluate effectiveness of the game, but the results were inconclusive.
+\end{itemize}
+}
 
 \sepspace
 \NewPart{Projects}{}
