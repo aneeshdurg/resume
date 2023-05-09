@@ -89,165 +89,167 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Githu
 \hspace{-2em}\color{White}a\color{Black}\leaders\hrule height 2.4pt\hskip 10pt plus 1fill\color{White}a\color{Black}
 
 \hspace{-1.5em}
-\begin{minipage}[t]{0.78\textwidth}
 \sepspace
 
-\vspace{-1.5em}
+\vspace{-1.25em}
 \NewPart{Work experience}{}
 
 \EducationEntry{Senior Software Engineer/Team Lead}{Feb 2021-Present}{KatanaGraph Inc. | Austin, TX}{
 \begin{itemize}
-  \item Leading a team of \textbf{5} to implement and support graph database querying and ingest.
-  \item Implementing support for the \textbf{OpenCypher} query language.
-  \item Implemented tools for distributed testing and developement, that reduced org-wide feedback cycles by \textbf{30x}
-  \item Developed novel distributed graph pattern matching algorithms for large scale graph querying (tested on $\sim$\textbf{20B} nodes, \textbf{44B} edges)
-  \item Improved pattern matching performance by \textbf{100x} in queries against the \textbf{LDBC} dataset and reduced memory usage by over \textbf{95\%} on some benchmarks.
+  \item Worked on building a distributed graph compute engine that provides AI, analytics, and a database.
+  \item Lead a team of \textbf{5} to implement and support graph database querying and ingest.
+  \begin{itemize}
+    \item[$\bullet$] Guided design discussions, identified organizational blockers, and coordinated with product to set priorities and generate new technical requirements.
+  \end{itemize}
+  \item Implemented compiler and runtime support for the \textbf{Cypher} query language.
+  \item Designed and implemented novel high performance algorithms for distributed subgraph pattern matching (tested on $\sim$\textbf{20B} nodes, \textbf{44B} edges)
+  \begin{itemize}
+    \item[$\bullet$] Improved performance by \textbf{100x} in queries against the \textbf{LDBC-SNB} datasets and reduced memory usage by over \textbf{95\%} on benchmarks simulating specific client workloads.
+  \end{itemize}
+  \item Proposed and implemented AST transformations to optimize query performance
+  \item Designed syntax extensions to \textbf{Cypher} to allow users to tune query performance
+  \item Built a hotswap mechanism to allow devs to replace only salient parts of a katana deployment on \textbf{kubernetes}, reducing org-wide feedback cycles by up to \textbf{30x}
+  \item Built infrastructure for benchmarking the query engine in isolation from the rest of the product using \textbf{slurm}
 \end{itemize}
 }
 
 \EducationEntry{Member of Technical Staff}{Aug 2019-Feb 2021}{Qumulo Inc. | Seattle, WA}{
 \begin{itemize}
-  \item[$\bullet$] Extended platform support for two new hardware configurations
-  \item[$\bullet$] Designed a solution for eliminating server downtime during upgrades from 5 minutes to under 30 seconds in a team of four
-    \begin{itemize}
-        \item[$\bullet$] Used containerization to avoid potentially slow boot times
-        \item[$\bullet$] Used \textbf{dbus} to allow processes to break out of a container
-    \end{itemize}
-  \item[$\bullet$] Helped implement the following \textbf{SMB} features
-    \begin{itemize}
-      \item[$\bullet$] SMB 3.1.1 negotiation, Server-side copy, Encryption
-    \end{itemize}
-  % \item[$\bullet$] Refactored the \textbf{SMB} implementation to reduce memory usage.
-  \item[$\bullet$] Helped lead migration of \textbf{python2} code to \textbf{python3}
-    \begin{itemize}
-      \item[$\bullet$] Modernized all python code by adding types and checking via \textbf{mypy}
-      \item[$\bullet$] Proposed and implemented a python dependency verification tool for customer and cloud deployments
-    \end{itemize}
+  \item Worked on building a distributed scale-out filesystem, supporting both on-prem and cloud.
+  \item Designed a solution for reducing server downtime during upgrades by \textbf{10X} in a team of four
+  \item Extended platform support for two new hardware configurations
+  \item Implemented the following \textbf{SMB} features: SMB 3.1.1 negotiation, Server-side copy, Encryption
+  % \item Refactored the \textbf{SMB} implementation to reduce memory usage.
+  \item Lead migration of \textbf{python2} code to \textbf{python3}, and introduced enforced type checking via \textbf{mypy}
+  \item Proposed and implemented a python dependency verification tool for customer and cloud deployments
 \end{itemize}
 }
 
 \EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
 \begin{itemize}
-  \item[$\bullet$] Lead assignment developmer, Lab assistant, Honors section lecturer/mentor.
+  \item Lead assignment developmer, Lab assistant, Honors section lecturer/mentor.
   % \item[$\bullet$] Designed and created assignments (and associated infrastructure) to allow students to implement and explore concepts such as filesystems, containers, and cooperative scheduling.
   % \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
 \end{itemize}
 }
 
-\sepspace
+\vspace{0.75em}
 \NewPart{Projects}{}
 
-\EducationEntry{rainbow}{python/openCypher}{\url{https://github.com/aneeshdurg/rainbow}}{
+\EducationEntry{rainbow}{python/Cypher}{\url{https://github.com/aneeshdurg/rainbow}}{
 \begin{itemize}
-\item Arbitrary function coloring and callgraph rejection tool powered by \textbf{clang}
-\item Allows a user to supply simple rules for matching callgraphs that are syntactically correct, but would be invalid at runtime
-\end{itemize}
-}
-
-\EducationEntry{Video Synth}{Javascript/GLSL}{\url{https://aneeshdurg.me/video-synth}}{
-\begin{itemize}
-\item Webapp for users to interactively build pipelines producing real-time video art.
-\item Implemented a \textbf{WebGL} rendering system that can mix multiple channels of output
+  \item Arbitrary compile-time function coloring and callgraph rejection tool powered by \textbf{clang} and \textbf{Cypher}
+\item Provides an ergonomic way for users to labels functions and lambdas, and then define relationships between those labels that should be considered invalid. Some example usecases are:
+  \begin{itemize}
+    \item[$\bullet$] label functions that assume locks are held to verify that they are never called without a lock
+    \item[$\bullet$] label routines using collective MPI operations to ensure that other collective operations aren't called during execution
+    \item[$\bullet$] prototype new language features such as async/constexpr without writing custom compiler passes/extensions
+  \end{itemize}
 \end{itemize}
 }
 
 \EducationEntry{What Is a Filesystem?}{Javascript}{\url{https://aneeshdurg.me/what_is_a_filesystem}}{
 \begin{itemize}
 \item An online interactive book/vizualization for students learning filesystem concepts.
-\item Implements a ext2-esque filesystem with animations to illustrate disk accesses.
-\item Features a terminal simulator which implements some standard \texttt{GNU/Linux} utilities.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
+\item Implements a interactive ext2-esque filesystem simulator with animations to illustrate disk accesses.
+  \begin{itemize}
+    \item[$\bullet$] Features a terminal simulator demonstrating how standard \texttt{GNU/Linux coreutils} might interact with the disk.
+  \end{itemize}
 \end{itemize}
 }
 \EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
 \begin{itemize}
-\item In-browser webcam gesture-based theremin (a musical instrument)
-\item Implemented all image processing functions required in Javascript/\textbf{WebGL}.
+  \item In-browser webcam gesture-based theremin (a musical instrument) powered by \textbf{Javascript} + \textbf{WebGL}
 \end{itemize}
 }
-\end{minipage}
-\hspace{0.25em}
-\vline
-%}
-%\colchunk[2]{
-%\begin{multicols}{2}
-\hspace{0.25em}
-\begin{minipage}[t]{0.2\textwidth}
-\sepspace
 
+\vspace{0.75em}
 \NewPart{Education}{}\newline
-\SkillsEntry{
-  \small
-    University of Illinois at\newline Urbana-Champaign
-  \normalsize \newline}{Aug 2015-May 2019}{
-    \sepspace Recieved BS in \newline Computer Science \& \newline Mathematics with \newline \textbf{High Distinction}\newline}{}%{\textbf{Current GPA:} 3.57/4.00\newline
-
-\sepspace
-\NewPart{Programming Languages}{} \newline
-    \SkillsEntry{}{
-      \textsc{C++},
-      \textsc{C},
-      \textsc{Python},\newline
-      \textsc{Rust},
-      \textsc{OpenCypher},\newline
-      \textsc{TypeScript},
-      \textsc{JavaScript},
-      \textsc{Bash},\newline
-      \textsc{Go},
-      \textsc{D},
-      \textsc{Haskell},\newline
-      \textsc{GLSL}
-    }
-
-\sepspace
-\sepspace
-\NewPart{Libraries/ Frameworks}{} \newline
-\SkillsEntry{}{
-  \textbf{Containers/OS:}
-  \newline
-  \small
-    \textsc{D-Bus},
-    \textsc{cgroups},
-    \textsc{sysfs},
-    \textsc{systemd},
-    \textsc{Docker},
-    \textsc{lxc},
-    \textsc{systemd-nspawn}
-  \normalsize
-  \newline\newline
-
-  \textbf{ML/AI:}
-  \newline
-  \small
-    \textsc{Caffe},
-    \textsc{OpenCV},
-    \newline
-    \textsc{PyTorch},
-    \textsc{TensorFlow}
-  \normalsize
-  \newline\newline
-
-  \textbf{Web Backend:}
-  \newline
-  \small
-    \textsc{Flask},
-    \textsc{Tornado},\newline
-    \textsc{Django},
-    \textsc{Node.js}
-  \normalsize
-  \newline\newline
-
-  \textbf{Web Frontend:}
-  \newline
-  \small
-    \textsc{React},
-    \textsc{peerjs},
-    \textsc{WebGL},
-    \textsc{d3.js},
-    \textsc{JQuery}
-  \normalsize
-  \newline\newline
-
-
-}
-\end{minipage}
+\EducationEntry{\small University of Illinois at Urbana-Champaign\normalsize}{Aug 2015-May 2019}{}{
+  \sepspace Recieved BS in \textbf{Computer Science \& Mathematics} with \textbf{High Distinction}}{}%{\textbf{Current GPA:} 3.57/4.00\newline
+% \hspace{0.25em}
+% \vline
+% %}
+% %\colchunk[2]{
+% %\begin{multicols}{2}
+% \hspace{0.25em}
+% \begin{minipage}[t]{0.2\textwidth}
+% \sepspace
+% 
+% \NewPart{Education}{}\newline
+% \SkillsEntry{
+%   \small
+%     University of Illinois at\newline Urbana-Champaign
+%   \normalsize \newline}{Aug 2015-May 2019}{
+%     \sepspace Recieved BS in \newline Computer Science \& \newline Mathematics with \newline \textbf{High Distinction}\newline}{}%{\textbf{Current GPA:} 3.57/4.00\newline
+% 
+% \sepspace
+% \NewPart{Programming Languages}{} \newline
+%     \SkillsEntry{}{
+%       \textsc{C++},
+%       \textsc{C},
+%       \textsc{Python},\newline
+%       \textsc{Rust},
+%       \textsc{OpenCypher},\newline
+%       \textsc{TypeScript},
+%       \textsc{JavaScript},
+%       \textsc{Bash},\newline
+%       \textsc{Go},
+%       \textsc{D},
+%       \textsc{Haskell},\newline
+%       \textsc{GLSL}
+%     }
+% 
+% \sepspace
+% \sepspace
+% \NewPart{Libraries/ Frameworks}{} \newline
+% \SkillsEntry{}{
+%   \textbf{Containers/OS:}
+%   \newline
+%   \small
+%     \textsc{D-Bus},
+%     \textsc{cgroups},
+%     \textsc{sysfs},
+%     \textsc{systemd},
+%     \textsc{Docker},
+%     \textsc{lxc},
+%     \textsc{systemd-nspawn}
+%   \normalsize
+%   \newline\newline
+% 
+%   \textbf{ML/AI:}
+%   \newline
+%   \small
+%     \textsc{Caffe},
+%     \textsc{OpenCV},
+%     \newline
+%     \textsc{PyTorch},
+%     \textsc{TensorFlow}
+%   \normalsize
+%   \newline\newline
+% 
+%   \textbf{Web Backend:}
+%   \newline
+%   \small
+%     \textsc{Flask},
+%     \textsc{Tornado},\newline
+%     \textsc{Django},
+%     \textsc{Node.js}
+%   \normalsize
+%   \newline\newline
+% 
+%   \textbf{Web Frontend:}
+%   \newline
+%   \small
+%     \textsc{React},
+%     \textsc{peerjs},
+%     \textsc{WebGL},
+%     \textsc{d3.js},
+%     \textsc{JQuery}
+%   \normalsize
+%   \newline\newline
+% 
+% 
+% }
+% \end{minipage}
 \end{document}

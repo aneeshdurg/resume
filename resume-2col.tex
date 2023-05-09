@@ -1,0 +1,253 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{boxedminipage}
+\usepackage{parcolumns}
+\usepackage{multicol}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage[margin=0.25in]{geometry}
+	\textheight=800px                    % Saving trees ;-)
+\usepackage{xhfill}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{0pt}{0pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newlength{\spacerbox}
+\settowidth{\spacerbox}{88888888888888888888888888888888888888888888888888888888888888888888888888888888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{% Name
+		\hspace{-1em}\Huge \usefont{OT1}{phv}{b}{n}#1
+		\par \normalsize \normalfont }
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\hspace{-2em}\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{ \noindent \large \usefont{OT1}{phv}{b}{n}\uppercase{#1} \normalfont \normalsize}
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent % Indentation
+		      % Box to align text
+		\textit{#1}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1}     % Study
+			\hfill#2 \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+ \usepackage{vwcol}
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+%%% Personal details
+%%% ------------------------------------------------------------
+%\begin{parcolumns}[nofirstindent,sloppy,rulebetween,colwidths={1=.25\linewidth}]{2}
+%\colchunk[1]{
+\MyName{Aneesh Durg}
+Email: aneeshdurg17@gmail.com $\vert$ Website: \url{aneeshdurg.me} $\vert$ Github: \url{github.com/aneeshdurg}
+\sepspace
+\vspace{-1em}
+
+\hspace{-2em}\color{White}a\color{Black}\leaders\hrule height 2.4pt\hskip 10pt plus 1fill\color{White}a\color{Black}
+
+\hspace{-1.5em}
+\begin{minipage}[t]{0.78\textwidth}
+\sepspace
+
+\vspace{-1.5em}
+\NewPart{Work experience}{}
+
+\EducationEntry{Senior Software Engineer/Team Lead}{Feb 2021-Present}{KatanaGraph Inc. | Austin, TX}{
+\begin{itemize}
+  \item Leading a team of \textbf{5} to implement and support graph database querying and ingest.
+  \item Implementing compiler and runtime support for the \textbf{OpenCypher} query language.
+  \item Implemented tools for distributed testing and developement, that reduced org-wide feedback cycles by \textbf{30x}
+  \item Developed novel distributed graph pattern matching algorithms for large scale graph querying (tested on $\sim$\textbf{20B} nodes, \textbf{44B} edges)
+  \item Improved pattern matching performance by \textbf{100x} in queries against the \textbf{LDBC} dataset and reduced memory usage by over \textbf{95\%} on some benchmarks.
+\end{itemize}
+}
+
+\EducationEntry{Member of Technical Staff}{Aug 2019-Feb 2021}{Qumulo Inc. | Seattle, WA}{
+\begin{itemize}
+  \item[$\bullet$] Extended platform support for two new hardware configurations
+  \item[$\bullet$] Designed a solution for eliminating server downtime during upgrades from 5 minutes to under 30 seconds in a team of four
+    \begin{itemize}
+        \item[$\bullet$] Used containerization to avoid potentially slow boot times
+        \item[$\bullet$] Used \textbf{dbus} to allow processes to break out of a container
+    \end{itemize}
+  \item[$\bullet$] Helped implement the following \textbf{SMB} features
+    \begin{itemize}
+      \item[$\bullet$] SMB 3.1.1 negotiation, Server-side copy, Encryption
+    \end{itemize}
+  % \item[$\bullet$] Refactored the \textbf{SMB} implementation to reduce memory usage.
+  \item[$\bullet$] Helped lead migration of \textbf{python2} code to \textbf{python3}
+    \begin{itemize}
+      \item[$\bullet$] Modernized all python code by adding types and checking via \textbf{mypy}
+      \item[$\bullet$] Proposed and implemented a python dependency verification tool for customer and cloud deployments
+    \end{itemize}
+\end{itemize}
+}
+
+\EducationEntry{Systems Programming Course Lead}{Jan 2017-May 2019}{CS241 @ UIUC | Urbana, IL}{
+\begin{itemize}
+  \item[$\bullet$] Lead assignment developmer, Lab assistant, Honors section lecturer/mentor.
+  % \item[$\bullet$] Designed and created assignments (and associated infrastructure) to allow students to implement and explore concepts such as filesystems, containers, and cooperative scheduling.
+  % \item[$\bullet$] Mentored honors students to complete projects exploring areas such as distributed systems, compilers and linux kernel development.
+\end{itemize}
+}
+
+\sepspace
+\NewPart{Projects}{}
+
+\EducationEntry{rainbow}{python/openCypher}{\url{https://github.com/aneeshdurg/rainbow}}{
+\begin{itemize}
+\item Arbitrary function coloring and callgraph rejection tool powered by \textbf{clang}
+\item Allows a user to supply simple rules for matching callgraphs that are syntactically correct, but would be invalid at runtime
+\end{itemize}
+}
+
+\EducationEntry{Video Synth}{Javascript/GLSL}{\url{https://aneeshdurg.me/video-synth}}{
+\begin{itemize}
+\item Webapp for users to interactively build pipelines producing real-time video art.
+\item Implemented a \textbf{WebGL} rendering system that can mix multiple channels of output
+\end{itemize}
+}
+
+\EducationEntry{What Is a Filesystem?}{Javascript}{\url{https://aneeshdurg.me/what_is_a_filesystem}}{
+\begin{itemize}
+\item An online interactive book/vizualization for students learning filesystem concepts.
+\item Implements a ext2-esque filesystem with animations to illustrate disk accesses.
+\item Features a terminal simulator which implements some standard \texttt{GNU/Linux} utilities.%, such as \texttt{cat}, \texttt{ls}, \texttt{mount}, among others.
+\end{itemize}
+}
+\EducationEntry{CameraTheremin}{JavaScript}{\url{https://aneeshdurg.me/CameraTheremin}}{
+\begin{itemize}
+\item In-browser webcam gesture-based theremin (a musical instrument)
+\item Implemented all image processing functions required in Javascript/\textbf{WebGL}.
+\end{itemize}
+}
+\end{minipage}
+\hspace{0.25em}
+\vline
+%}
+%\colchunk[2]{
+%\begin{multicols}{2}
+\hspace{0.25em}
+\begin{minipage}[t]{0.2\textwidth}
+\sepspace
+
+\NewPart{Education}{}\newline
+\SkillsEntry{
+  \small
+    University of Illinois at\newline Urbana-Champaign
+  \normalsize \newline}{Aug 2015-May 2019}{
+    \sepspace Recieved BS in \newline Computer Science \& \newline Mathematics with \newline \textbf{High Distinction}\newline}{}%{\textbf{Current GPA:} 3.57/4.00\newline
+
+\sepspace
+\NewPart{Programming Languages}{} \newline
+    \SkillsEntry{}{
+      \textsc{C++},
+      \textsc{C},
+      \textsc{Python},\newline
+      \textsc{Rust},
+      \textsc{OpenCypher},\newline
+      \textsc{TypeScript},
+      \textsc{JavaScript},
+      \textsc{Bash},\newline
+      \textsc{Go},
+      \textsc{D},
+      \textsc{Haskell},\newline
+      \textsc{GLSL}
+    }
+
+\sepspace
+\sepspace
+\NewPart{Libraries/ Frameworks}{} \newline
+\SkillsEntry{}{
+  \textbf{Containers/OS:}
+  \newline
+  \small
+    \textsc{D-Bus},
+    \textsc{cgroups},
+    \textsc{sysfs},
+    \textsc{systemd},
+    \textsc{Docker},
+    \textsc{lxc},
+    \textsc{systemd-nspawn}
+  \normalsize
+  \newline\newline
+
+  \textbf{ML/AI:}
+  \newline
+  \small
+    \textsc{Caffe},
+    \textsc{OpenCV},
+    \newline
+    \textsc{PyTorch},
+    \textsc{TensorFlow}
+  \normalsize
+  \newline\newline
+
+  \textbf{Web Backend:}
+  \newline
+  \small
+    \textsc{Flask},
+    \textsc{Tornado},\newline
+    \textsc{Django},
+    \textsc{Node.js}
+  \normalsize
+  \newline\newline
+
+  \textbf{Web Frontend:}
+  \newline
+  \small
+    \textsc{React},
+    \textsc{peerjs},
+    \textsc{WebGL},
+    \textsc{d3.js},
+    \textsc{JQuery}
+  \normalsize
+  \newline\newline
+
+
+}
+\end{minipage}
+\end{document}
