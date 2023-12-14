@@ -86,13 +86,29 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\ver
 
 \NewPart{Work experience}{}
 
-\EducationEntry{Senior Software Engineer}{Feb 2021-Present}{KatanaGraph Inc. | Austin, TX}{
+\EducationEntry{Senior Software Engineer}{Jul 2023-Present}{Bodo.ai | remote}{
 \begin{itemize}
-  \item Implementing and optimizing distributed graph pattern matching and implementing support for the \textbf{cypher} query language.
-  \item Redesigned pattern matcher to not require replication of edges across hosts in distributed mode
-  \item Designed and implemented a variable length edge matching algorithm that improved performance by up to 25\% in queries against the \textbf{LDBC} dataset.
-  \item Proposed and implemented a bounded memory usage pattern matcher to avoid crashes due to exhaustion of memory
-  \item Redesigned datastructures storing intermediate representations of pattern matching results to save up to 75\% of memory usage in some benchmarks.
+  \item Developing the core engine which consists of an optimizing compiler and scalable runtime for \textbf{SQL} and python/pandas workflows.
+  \item Identified optimizations that reduced compile time by 60\% in some benchmarks
+\end{itemize}
+}
+
+\EducationEntry{Senior Software Engineer/Team Lead}{Feb 2021-Present}{KatanaGraph Inc. | Austin, TX}{
+\begin{itemize}
+  \item Worked on building a distributed graph compute engine that provides AI, analytics, and a database.
+  \item Lead a team of \textbf{5} to implement and support graph database querying and ingest.
+  \begin{itemize}
+    \item[$\bullet$] Guided design discussions, identified organizational blockers, and coordinated with product to set priorities and generate new technical requirements.
+  \end{itemize}
+  \item Implemented compiler and runtime support for the \textbf{Cypher} query language.
+  \item Designed and implemented novel high performance algorithms for distributed subgraph pattern matching (tested on $\sim$\textbf{20B} nodes, \textbf{44B} edges)
+  \begin{itemize}
+    \item[$\bullet$] Improved performance by \textbf{100x} in queries against the \textbf{LDBC-SNB} datasets and reduced memory usage by over \textbf{95\%} on benchmarks simulating specific client workloads.
+  \end{itemize}
+  \item Proposed and implemented AST transformations to optimize query performance
+  \item Designed syntax extensions to \textbf{Cypher} to allow users to tune query performance
+  \item Built a hotswap mechanism to allow devs to replace only salient parts of a katana deployment on \textbf{kubernetes}, reducing org-wide feedback cycles by up to \textbf{30x}
+  \item Built infrastructure for benchmarking the query engine in isolation from the rest of the product using \textbf{slurm}
 \end{itemize}
 }
 
@@ -147,6 +163,28 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\ver
 \sepspace
 \NewPart{Teaching Experience/Projects}{}
 \newline
+
+\EducationEntry{rainbow}{python/Cypher}{\url{https://github.com/aneeshdurg/rainbow}}{
+\begin{itemize}
+  \item Arbitrary compile-time function coloring and callgraph rejection tool powered by \textbf{clang} and \textbf{Cypher}
+\item Provides an ergonomic way for users to labels functions and lambdas, and then define relationships between those labels that should be considered invalid. Some example usecases are:
+  \begin{itemize}
+    \item[$\bullet$] label functions that assume locks are held to verify that they are never called without a lock
+    \item[$\bullet$] label routines using collective MPI operations to ensure that other collective operations aren't called during execution
+    \item[$\bullet$] prototype new language features such as async/constexpr without writing custom compiler passes/extensions
+  \end{itemize}
+\end{itemize}
+}
+
+\EducationEntry{spycy}{python/WASM}{\url{https://github.com/aneeshdurg/spycy}}{
+\begin{itemize}
+  \item An in-process graph database library for python that implements a \textbf{openCypher} frontend
+  \item Provides implementable interfaces for data sources to enable querying real world graphs.
+  \begin{itemize}
+    \item[$\bullet$] Wrote a demo that uses \textbf{spycy} and \textbf{WASM} to filter HTML nodes using \textbf{openCypher}
+  \end{itemize}
+\end{itemize}
+}
 
 \EducationEntry{What Is a Filesystem?}{}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
 \begin{itemize}
