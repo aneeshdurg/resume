@@ -89,6 +89,7 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\ver
 \EducationEntry{Senior Software Engineer}{Jul 2023-Present}{Bodo.ai | remote}{
 \begin{itemize}
   \item Developing the core engine which consists of an optimizing compiler and scalable runtime for \textbf{SQL} and python/pandas workflows.
+  \item Expanding compiler and runtime support for non-ANSI SQL dialects
   \item Identified optimizations that reduced compile time by 60\% in some benchmarks
 \end{itemize}
 }
@@ -164,28 +165,6 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\ver
 \NewPart{Teaching Experience/Projects}{}
 \newline
 
-\EducationEntry{rainbow}{python/Cypher}{\url{https://github.com/aneeshdurg/rainbow}}{
-\begin{itemize}
-  \item Arbitrary compile-time function coloring and callgraph rejection tool powered by \textbf{clang} and \textbf{Cypher}
-\item Provides an ergonomic way for users to labels functions and lambdas, and then define relationships between those labels that should be considered invalid. Some example usecases are:
-  \begin{itemize}
-    \item[$\bullet$] label functions that assume locks are held to verify that they are never called without a lock
-    \item[$\bullet$] label routines using collective MPI operations to ensure that other collective operations aren't called during execution
-    \item[$\bullet$] prototype new language features such as async/constexpr without writing custom compiler passes/extensions
-  \end{itemize}
-\end{itemize}
-}
-
-\EducationEntry{spycy}{python/WASM}{\url{https://github.com/aneeshdurg/spycy}}{
-\begin{itemize}
-  \item An in-process graph database library for python that implements a \textbf{openCypher} frontend
-  \item Provides implementable interfaces for data sources to enable querying real world graphs.
-  \begin{itemize}
-    \item[$\bullet$] Wrote a demo that uses \textbf{spycy} and \textbf{WASM} to filter HTML nodes using \textbf{openCypher}
-  \end{itemize}
-\end{itemize}
-}
-
 \EducationEntry{What Is a Filesystem?}{}{\url{http://aneeshdurg.me/what_is_a_filesystem}}{
 \begin{itemize}
 \item An interactive book/vizualization for students learning filesystem concepts.
@@ -196,7 +175,7 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\ver
 
 \EducationEntry{Visual Malloc}{}{\url{https://aneeshdurg.me/visual-malloc/}} {
 \begin{itemize}
-\item An interactive vizualization for students implementing a memory allocator to visualize how various memory allocation schemes might work
+\item An interactive vizualization to aid in teaching students about how memory allocators work, and possibly to allow students to use as a debugging tool when implementing their own mallocs.
 \end{itemize}
 }
 
@@ -228,6 +207,28 @@ Email: aneeshdurg17@gmail.com $\vert$ Website: \url{https://aneeshdurg.me} $\ver
 \sepspace
 \NewPart{Projects}{}
 \newline
+\EducationEntry{rainbow}{python/Cypher}{\url{https://github.com/aneeshdurg/rainbow}}{
+\begin{itemize}
+  \item Arbitrary compile-time function coloring and callgraph rejection tool powered by \textbf{clang} and \textbf{Cypher}
+\item Provides an ergonomic way for users to labels functions and lambdas, and then define relationships between those labels that should be considered invalid. Some example usecases are:
+  \begin{itemize}
+    \item[$\bullet$] label functions that assume locks are held to verify that they are never called without a lock
+    \item[$\bullet$] label routines using collective MPI operations to ensure that other collective operations aren't called during execution
+    \item[$\bullet$] prototype new language features such as async/constexpr without writing custom compiler passes/extensions
+  \end{itemize}
+\end{itemize}
+}
+
+\EducationEntry{spycy}{python/WASM}{\url{https://github.com/aneeshdurg/spycy}}{
+\begin{itemize}
+  \item An in-process graph database library for python that implements a \textbf{openCypher} frontend
+  \item Provides implementable interfaces for data sources to enable querying real world graphs.
+  \begin{itemize}
+    \item[$\bullet$] Wrote a demo that uses \textbf{spycy} and \textbf{WASM} to filter HTML nodes using \textbf{openCypher}
+  \end{itemize}
+\end{itemize}
+}
+
 \EducationEntry{Bash Raytracer}{bash}{\url{https://github.com/aneeshdurg/bash-raytracer}}{
 \begin{itemize}
 \item An implementation of a raytracer in bash
