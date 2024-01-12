@@ -1,27 +1,35 @@
 /* Setup page size */
 
-html,body {
+body {
   width: 8.5in;
   height: 11in;
-  padding: 0.5em;
-}
-
-body {
   padding: 0.5em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   font-family: "Times New Roman", serif;
+  margin: auto;
 }
 
 @media print {
-    .pagebreak {
-        clear: both;
-        page-break-after: always;
-    }
+  .pagebreak {
+      clear: both;
+      page-break-after: always;
+  }
 
-    .noprint {
-      display: none;
-    }
+  .noprint {
+    display: none;
+  }
+}
+
+@media not print {
+  .printonly {
+    display: none;
+  }
+}
+
+.pagebreak {
+    clear: both;
+    page-break-after: always;
 }
 
 .noprint > a {
