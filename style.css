@@ -8,8 +8,8 @@ html,body {
 
 body {
   padding: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
   font-family: "Times New Roman", serif;
 }
 
@@ -54,7 +54,7 @@ a:hover {
 /* Define styles for entries */
 
 .header {
-  font-family: ariel, sans-serif
+  font-family: ubuntu, sans-serif
 }
 
 .subheader {
@@ -63,26 +63,31 @@ a:hover {
   margin-left: 0.75em;
 }
 
+.subheader > a {
+  font-family: mono;
+}
+
 hr {
-  height: 0.25em;
+  height: 0.15em;
   color: black;
   background: black;
-  border: solid 1px fill;
+  border: none;
 }
 
 .section > h2 {
   font-size: 18px;
-  padding-bottom: 0.1em;
-  font-family: ariel, sans-serif
+  padding-bottom: 0.15em;
+  font-family: ubuntu, sans-serif
 }
 
 .entry {
   clear: both;
+  padding-bottom: 0.5em;
 }
 
 .title {
   float: left;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .duration {
@@ -94,8 +99,19 @@ hr {
   clear: both;
   font-style: italic;
   font-size: 15px;
+  padding-bottom: 0.5em;
 }
 
 .info {
   font-size: 13px;
+}
+
+li > ul {
+  margin-left: 0;
+  padding-left: 2em;
+  list-style-type: disc;
+}
+
+.info > ul > li {
+  padding-bottom: 0.25em;
 }
