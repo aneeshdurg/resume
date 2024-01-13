@@ -4,12 +4,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       el.href = el.innerText;
     }
   };
-  for (let el of document.querySelectorAll(".include")) {
+
+  await Promise.all([...document.querySelectorAll(".include")].map(el => {
     const src = "snippets/" + el.dataset.src;
-    const resp = await fetch(src);
-    const content = await resp.text();
-    el.innerHTML = content;
-  }
+    return fetch(src).then(resp => {
+      resp.text().then(content => {
+        el.innerHTML = content;
+      });
+    })
+  }));
 
   fix_links();
 });
