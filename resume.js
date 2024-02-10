@@ -14,5 +14,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     })
   }));
 
+  await new Promise(resolve => {
+    setTimeout(resolve, 100);
+  });
+
   fix_links();
 });
