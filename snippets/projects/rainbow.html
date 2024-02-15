@@ -4,13 +4,13 @@
   <div class="company"><a class="autolink">https://github.com/aneeshdurg/rainbow</a></div>
   <div class="info">
     <ul>
-      <li> Arbitrary compile-time function coloring and callgraph rejection tool powered by <b>clang</b> and <b>Cypher</b> </li>
+      <li> Static analysis tool for C/C++ to reject invalid callgraphs, powered by <b>clang</b> and <b>Cypher</b> </li>
       <li>
-        Provides an ergonomic way for users to labels functions and lambdas, and then define relationships between those labels that should be considered invalid. Some example usecases are:
+        Provides an ergonomic way for users to label functions and lambdas and to define relationships between those labels that should be considered invalid. Some example usecases are:
         <ul>
-          <li> label functions that assume locks are held to verify that they are never called without a lock </li>
-          <li> label routines using collective <b>MPI</b> operations to ensure that other collective operations aren't called during execution </li>
-          <li> prevent secure functions from being called from insecure contexts </li>
+          <li> Prevent functions that assume locks are held from being called without a lock </li>
+          <li> Prevent functions using collective <b>MPI</b> operations from being called during another collective operation </li>
+          <li> Prevent secure functions from being called from insecure contexts </li>
         </ul>
       </li>
     </ul>
