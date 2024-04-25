@@ -1,3 +1,21 @@
+/* Setup fonts */
+@font-face {
+  font-family: "ubuntu";
+  src: url("font/Ubuntu/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("font/Ubuntu/Ubuntu-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("font/Ubuntu/Ubuntu-Italic.ttf");
+  font-style: italic;
+}
+
 /* Setup page size */
 
 body {
