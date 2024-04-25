@@ -5,10 +5,15 @@
   <div class="info">
     <ul>
       <li>
-        Developing the core engine which consists of an optimizing compiler and scalable distributed runtime (using <b>MPI</b>) for <b>SQL</b> and python/pandas workflows.
+        Developing the core engine - an optimizing compiler and scalable distributed runtime (using <b>MPI</b>) for <b>SQL</b> and python/pandas workflows.
       </li>
       <li>
-        Expanding compiler and runtime support for non-ANSI SQL dialects
+        Expanding compiler and runtime support for non-ANSI <b>SQL</b> dialects
+        <ul>
+          <li>
+            Added support for <b>TIMESTAMP_TZ</b> data type
+          </li>
+        </ul>
       </li>
       <li>
         Identified optimizations that reduced compile time by <b>60%</b> in some benchmarks
