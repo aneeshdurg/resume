@@ -8,12 +8,19 @@
         Developing the core engine - an optimizing compiler and scalable distributed runtime (using <b>MPI</b>) for <b>SQL</b> and python/pandas workflows.
       </li>
       <li>
-        Expanding compiler and runtime support for non-ANSI <b>SQL</b> dialects
-        <ul>
-          <li>
-            Added support for <b>TIMESTAMP_TZ</b> data type
-          </li>
-        </ul>
+        Built profiling/tracing infrastructure to analyze and optimize query
+        performance
+      </li>
+      <li>
+        Added support for the <b>AWS Glue</b> Iceberg catalog
+      </li>
+      <li>
+        Implemented support for some <b>DDL</b> operations with <b>Iceberg</b>
+        catalogs
+      </li>
+      <li>
+        Expanded compiler and runtime support for data types and operations for
+        snowflake <b>SQL</b> compatability.
       </li>
       <li>
         Identified optimizations that reduced compile time by <b>60%</b> in some benchmarks
