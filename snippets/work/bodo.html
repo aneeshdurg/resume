@@ -8,15 +8,18 @@
         Developing the core engine - an optimizing compiler and scalable distributed runtime (using <b>MPI</b>) for <b>SQL</b> and python/pandas workflows.
       </li>
       <li>
+        Designed and implemented a distributed streaming external sort operator
+        capable of sorting larger than memory streams of rows, while being
+        <b>2x</b> faster than the original in-memory implementation in some
+        benchmarks.
+      </li>
+      <li>
         Built profiling/tracing infrastructure to analyze and optimize query
         performance
       </li>
       <li>
-        Added support for the <b>AWS Glue</b> Iceberg catalog
-      </li>
-      <li>
-        Implemented support for some <b>DDL</b> operations with <b>Iceberg</b>
-        catalogs
+        Expanded <b>Iceberg</b> support by implementing <b>DDL</b> operations
+        and adding integrations with the <b>AWS Glue</b> catalog
       </li>
       <li>
         Expanded compiler and runtime support for data types and operations for
